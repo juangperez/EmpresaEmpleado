@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmpresaEmpleado</title>
+
+  <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script> 
+
+  <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+  <script type="text/javascript" src="jqwidgets/jqx-all.js"></script>
+
+  <script type="text/javascript" src="scripts/constants.js"></script>
+  <script type="text/javascript" src="scripts/database.js"></script>
+  <script type="text/javascript" src="scripts/gridEmpresas.js"></script>
+  <script type="text/javascript" src="scripts/detailEmpresa.js"></script>
+  <script type="text/javascript" src="scripts/gridEmpleados.js"></script>
+  <script type="text/javascript" src="scripts/detailEmpleado.js"></script>
+
+  <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+  <link rel="stylesheet" href="jqwidgets/styles/jqx.darkblue.css" type="text/css" />
+</head>
+<body>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      initGridEmpresas();
+      initPopupEmpresa();
+      initGridEmpleados();
+      initPopupEmpleado();
+    });
+  </script>
+
+  <div id="jqxgrid"></div>
+
+  <div id="popupEmpresa">
+    <div>Empresa</div>
+    <div style="overflow: hidden;">
+      <table>
+        <tr>
+        <td align="right">Nombre:</td>
+          <td align="left"><input id="nombre" /></td>
+        </tr>
+        <tr>
+          <td align="right">CIF:</td>
+          <td align="left"><input id="cif" /></td>
+        </tr>
+        <tr>
+          <td align="right">Sector:</td>
+          <td align="left"><input id="sector" /></td>
+        </tr>
+        <tr>
+          <td>
+            <div id="gridEmpleados"></div>
+          </td>
+        </tr>
+        <tr>
+          <td align="left"></td>
+          <td style="padding-top: 10px;" align="right">
+            <input style="margin-right: 15px;" id="Delete" type="button" value="Borrar" />
+            <input style="margin-right: 5px;" type="button" id="Save" value="Save" />
+            <input id="Cancel" type="button" value="Cancel" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="popupEmpleado">
+    <div>Empleado</div>
+    <div style="overflow: hidden;">
+      <table>
+        <tr>
+          <td align="right">Nombre:</td>
+          <td align="left"><input id="nombre-empleado" /></td>
+        </tr>
+        <tr>
+          <td align="right">Apellidos:</td>
+          <td align="left"><input id="apellidos" /></td>
+        </tr>
+        <tr>
+          <td align="right">NIF:</td>
+          <td align="left"><input id="nif" /></td>
+        </tr>
+        <tr>
+          <td align="right">Empresa:</td>
+          <td align="left"><div id='empresa'></div>
+        </td>
+        </tr>
+        <tr>
+          <td align="right">Incorporación:</td>
+          <td align="left"><input id="fecha_incorporacion" /></td>
+        </tr>
+        <tr>
+            <td align="left"></td>
+            <td style="padding-top: 10px;" align="right">
+              <input style="margin-right: 15px;" id="Delete-empleado" type="button" value="Borrar" />
+              <input style="margin-right: 5px;" type="button" id="Save-empleado" value="Save" />
+              <input id="Cancel-empleado" type="button" value="Cancel" />
+            </td>
+          </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
